@@ -1,0 +1,139 @@
+//! Transition Fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter,
+.fade-leave {
+  opacity: 0;
+}
+
+//! Transition fade and scale
+
+.fade-scale-enter{
+    opacity: 0;
+    transform: scale(0);
+}
+.fade-scale-enter-active{
+    transition: all .2s linear;
+}
+.fade-scale-leave{
+    transform: scale(1);
+    opacity: 1;
+}
+.fade-scale-leave-active{
+    transition: all .2s linear;
+    opacity: 0;
+    
+    position: absolute;
+    transform: scale(0);
+}
+
+//? Alert slide
+.slide-alert-enter{
+    opacity: 0;
+}
+.slide-alert-enter-active{
+    animation: slide-alert-in .3s ease-out forwards;
+    transition: opacity .3s;
+}
+.slide-alert-leave{
+}
+.slide-alert-leave-active{
+    animation: slide-alert-out .3s ease-out forwards;
+    transition: opacity .3s;
+    opacity: 0;
+}
+.slide-alert-move{
+    transition: transform .3s;
+}
+
+@keyframes slide-alert-in{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-alert-out{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+//? Slider slide
+
+.next-slide-enter{
+
+}
+.next-slide-enter-active{
+    animation: next-slide-enter-animate .3s ease-out forwards;
+}
+.next-slide-leave{
+    
+}
+.next-slide-leave-active{
+    animation: next-slide-leave-animate .3s ease-out forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes next-slide-leave-animate {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes next-slide-enter-animate {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+.back-slide-enter{
+
+}
+.back-slide-enter-active{
+    animation: back-slide-enter-animate .3s ease-out forwards;
+}
+.back-slide-leave{
+    
+}
+.back-slide-leave-active{
+    animation: back-slide-leave-animate .3s ease-out forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes back-slide-leave-animate {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes back-slide-enter-animate {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
